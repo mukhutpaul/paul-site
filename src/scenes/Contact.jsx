@@ -18,7 +18,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-48 contact">
+    <section id="contact" className="contact py-48">
       {/* HEADINGS */}
       <motion.div
         initial="hidden"
@@ -32,17 +32,17 @@ const Contact = () => {
         className="flex justify-end w-full"
       >
         <div>
-          <p className="text-4xl font-semibold font-playfair">
+          <p className="font-playfair font-semibold text-4xl">
             <span className="text-yellow">CONTACT ME</span> TO GET STARTED
           </p>
-          <div className="flex my-5 md:justify-end">
+          <div className="flex md:justify-end my-5">
             <LineGradient width="w-1/2" />
           </div>
         </div>
       </motion.div>
 
       {/* FORM & IMAGE */}
-      <div className="gap-16 mt-5 md:flex md:justify-between">
+      <div className="md:flex md:justify-between gap-16 mt-5">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -52,7 +52,7 @@ const Contact = () => {
             hidden: { opacity: 0, y: 50 },
             visible: { opacity: 1, y: 0 },
           }}
-          className="flex justify-center basis-1/2"
+          className="basis-1/2 flex justify-center"
         >
           <img src="../assets/contact-image.jpeg" alt="contact" />
         </motion.div>
@@ -66,16 +66,16 @@ const Contact = () => {
             hidden: { opacity: 0, y: 50 },
             visible: { opacity: 1, y: 0 },
           }}
-          className="mt-10 basis-1/2 md:mt-0"
+          className="basis-1/2 mt-10 md:mt-0"
         >
           <form
             target="_blank"
             onSubmit={onSubmit}
-            action="https://formsubmit.co/mukhutjp@gmail.com"
+            action="https://formsubmit.co/e8a5bdfa807605332f809e5656e27c6e"
             method="POST"
           >
             <input
-              className="w-full p-3 font-semibold bg-blue placeholder-opaque-black"
+              className="w-full bg-blue font-semibold placeholder-opaque-black p-3"
               type="text"
               placeholder="NAME"
               {...register("name", {
@@ -84,14 +84,14 @@ const Contact = () => {
               })}
             />
             {errors.name && (
-              <p className="mt-1 text-red">
+              <p className="text-red mt-1">
                 {errors.name.type === "required" && "This field is required."}
                 {errors.name.type === "maxLength" && "Max length is 100 char."}
               </p>
             )}
 
             <input
-              className="w-full p-3 mt-5 font-semibold bg-blue placeholder-opaque-black"
+              className="w-full bg-blue font-semibold placeholder-opaque-black p-3 mt-5"
               type="text"
               placeholder="EMAIL"
               {...register("email", {
@@ -100,14 +100,14 @@ const Contact = () => {
               })}
             />
             {errors.email && (
-              <p className="mt-1 text-red">
+              <p className="text-red mt-1">
                 {errors.email.type === "required" && "This field is required."}
                 {errors.email.type === "pattern" && "Invalid email address."}
               </p>
             )}
 
             <textarea
-              className="w-full p-3 mt-5 font-semibold bg-blue placeholder-opaque-black"
+              className="w-full bg-blue font-semibold placeholder-opaque-black p-3 mt-5"
               name="message"
               placeholder="MESSAGE"
               rows="4"
@@ -118,7 +118,7 @@ const Contact = () => {
               })}
             />
             {errors.message && (
-              <p className="mt-1 text-red">
+              <p className="text-red mt-1">
                 {errors.message.type === "required" &&
                   "This field is required."}
                 {errors.message.type === "maxLength" &&
@@ -127,7 +127,7 @@ const Contact = () => {
             )}
 
             <button
-              className="p-5 mt-5 font-semibold transition duration-500 bg-yellow text-deep-blue hover:bg-red hover:text-white"
+              className="p-5 bg-yellow font-semibold text-deep-blue mt-5 hover:bg-red hover:text-white transition duration-500"
               type="submit"
             >
               SEND ME A MESSAGE
